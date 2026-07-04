@@ -1,0 +1,142 @@
+/* ============================================================
+   base.css  —  CSS Reset, Custom Properties, Typography
+   ============================================================ */
+
+/* ── Google Font is loaded in <head>; these are fallbacks ── */
+
+/* ── Design Tokens ── */
+:root {
+  /* Primary blue */
+  --blue:          #1a56db;
+  --blue-hover:    #1648c0;
+  --blue-light:    #e8f0fe;
+  --blue-dim:      rgba(26,86,219,0.08);
+
+  /* Text */
+  --text:          #111827;
+  --text-secondary:#374151;
+  --text-muted:    #6B7280;
+  --text-faint:    #9CA3AF;
+
+  /* Backgrounds */
+  --bg:            #F3F4F6;
+  --surface:       #FFFFFF;
+  --surface-alt:   #F9FAFB;
+  --border:        #E5E7EB;
+  --border-dark:   #D1D5DB;
+
+  /* Accents */
+  --red:           #C62828;
+  --green:         #059669;
+  --amber:         #D97706;
+
+  /* Shadows */
+  --shadow-sm:     0 1px 2px rgba(0,0,0,0.06);
+  --shadow:        0 1px 3px rgba(0,0,0,0.10), 0 1px 2px rgba(0,0,0,0.06);
+  --shadow-md:     0 4px 6px -1px rgba(0,0,0,0.10), 0 2px 4px -1px rgba(0,0,0,0.06);
+  --shadow-lg:     0 10px 15px -3px rgba(0,0,0,0.10), 0 4px 6px -2px rgba(0,0,0,0.05);
+
+  /* Layout */
+  --header-h:      68px;
+  --sidebar-w:     200px;
+  --page-pad:      1.25rem;
+  --radius:        8px;
+  --radius-lg:     12px;
+  --radius-xl:     16px;
+
+  /* Transitions */
+  --t-fast:        130ms ease;
+  --t-med:         220ms ease;
+  --t-slow:        340ms ease;
+}
+
+/* ── Reset ── */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 15px;
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+  min-height: 100vh;
+  overflow-x: hidden;
+  transition: background var(--t-med), color var(--t-med);
+}
+
+/* ── Headings ── */
+h1, h2, h3, h4 {
+  line-height: 1.25;
+  font-weight: 700;
+  color: var(--text);
+}
+
+/* ── Links ── */
+a {
+  color: var(--blue);
+  text-decoration: none;
+  transition: color var(--t-fast);
+}
+a:hover { color: var(--blue-hover); text-decoration: underline; }
+
+/* ── Images ── */
+img { max-width: 100%; display: block; }
+
+/* ── Lists ── */
+ul, ol { list-style: none; }
+
+/* ── Buttons base ── */
+button {
+  font-family: inherit;
+  font-size: inherit;
+  cursor: pointer;
+  border: none;
+  background: transparent;
+  transition: var(--t-fast);
+}
+button:focus-visible {
+  outline: 2px solid var(--blue);
+  outline-offset: 2px;
+  border-radius: var(--radius);
+}
+
+/* ── Tables ── */
+table { border-collapse: collapse; width: 100%; }
+th, td { text-align: left; vertical-align: middle; }
+
+/* ── Selection ── */
+::selection { background: var(--blue-light); color: var(--blue); }
+
+/* ── Scrollbars (Webkit) ── */
+::-webkit-scrollbar       { width: 6px; height: 6px; }
+::-webkit-scrollbar-track  { background: transparent; }
+::-webkit-scrollbar-thumb  {
+  background: var(--border-dark);
+  border-radius: 6px;
+}
+::-webkit-scrollbar-thumb:hover { background: var(--text-faint); }
+
+/* Firefox scrollbar */
+* { scrollbar-width: thin; scrollbar-color: var(--border-dark) transparent; }
+
+/* ── Utility: visually hidden (a11y) ── */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0,0,0,0);
+  white-space: nowrap;
+  border: 0;
+}

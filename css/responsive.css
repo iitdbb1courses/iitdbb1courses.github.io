@@ -1,0 +1,133 @@
+/* ============================================================
+   responsive.css  —  Media Queries for all breakpoints
+   ============================================================ */
+
+
+/* ══════════════════════════════════════════════
+   Tablet  (≤ 1024px)
+══════════════════════════════════════════════ */
+@media (max-width: 1024px) {
+  :root { --sidebar-w: 175px; }
+
+  .welcome-img-block { width: 220px; }
+  .campus-img         { height: 140px; }
+  .header-main-title  { font-size: 15px; }
+  .panel-title        { font-size: 22px; }
+  .credit-value       { font-size: 36px; }
+}
+
+
+/* ══════════════════════════════════════════════
+   Mobile  (≤ 768px)
+══════════════════════════════════════════════ */
+@media (max-width: 768px) {
+  :root {
+    --header-h:  58px;
+    --page-pad:  0.85rem;
+  }
+
+  /* Show hamburger, hide theme label */
+  .hamburger-btn { display: flex; }
+  #themeText      { display: none; }
+  .dark-mode-btn  { padding: 7px 10px; }
+
+  /* Header title: shorter on mobile */
+  .header-main-title { font-size: 13.5px; white-space: normal; }
+  .header-sub-title  { font-size: 11px; }
+
+  /* Welcome: stack vertically */
+  .welcome-body {
+    flex-direction: column-reverse;
+    gap: 16px;
+  }
+  .welcome-img-block { width: 100%; }
+  .campus-img        { height: 160px; width: 100%; }
+
+  /* Toggle: left-align */
+  .curr-toggle-inner { justify-content: flex-start; }
+
+  /* Dashboard: sidebar becomes slide-in overlay */
+  .dashboard-inner { position: relative; }
+
+  .sidebar {
+    position: absolute;
+    top: 0;
+    left: -100%;
+    z-index: 300;
+    height: 100%;
+    background: var(--surface);
+    width: 220px !important;
+    box-shadow: 4px 0 20px rgba(0,0,0,0.15);
+    padding-top: 12px;
+    transition: left var(--t-med) cubic-bezier(0.4,0,0.2,1);
+  }
+  .sidebar.open { left: 0; }
+
+  /* Mobile overlay behind sidebar */
+  .sidebar-overlay {
+    display: block;
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.38);
+    z-index: 200;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity var(--t-med);
+  }
+  .sidebar-overlay.show {
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  /* Main content: full width */
+  .main-content { padding: 16px 14px 20px; }
+
+  .panel-title  { font-size: 20px; }
+  .credit-value { font-size: 30px; }
+  .panel-header { flex-direction: column; gap: 10px; }
+  .credit-display { align-items: flex-start; }
+
+  /* Table: horizontal scroll */
+  .table-wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+  .course-table { min-width: 480px; }
+}
+
+
+/* ══════════════════════════════════════════════
+   Small mobile  (≤ 480px)
+══════════════════════════════════════════════ */
+@media (max-width: 480px) {
+  .header-main-title  { font-size: 12px; }
+  .welcome-heading    { font-size: 17px; }
+  .welcome-desc       { font-size: 13px; }
+  .welcome-card       { padding: 18px 14px; }
+
+  .course-table th,
+  .course-table td    { padding: 8px 10px; }
+  .course-table       { font-size: 12.5px; }
+}
+
+
+/* ══════════════════════════════════════════════
+   Print
+══════════════════════════════════════════════ */
+@media print {
+  .site-header      { position: static; box-shadow: none; }
+  .welcome-section  { break-inside: avoid; }
+  .curr-toggle-section { display: none; }
+  .sidebar          { display: none; }
+  .main-content     { padding: 0; }
+  .dashboard-card   { border: none; box-shadow: none; }
+  .site-footer      { display: none; }
+}
+
+
+/* ══════════════════════════════════════════════
+   Reduced Motion
+══════════════════════════════════════════════ */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration:  0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}

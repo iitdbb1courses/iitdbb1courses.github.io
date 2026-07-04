@@ -1,0 +1,98 @@
+/* ============================================================
+   welcome.css  —  Welcome Section
+   ============================================================ */
+
+.welcome-section {
+  padding: var(--page-pad);
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.welcome-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow);
+  padding: 28px 30px;
+  transition: background var(--t-med), border-color var(--t-med);
+}
+
+/* ── Two-column layout inside the card ── */
+.welcome-body {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 28px;
+}
+
+/* ── Left: text block ── */
+.welcome-text-block {
+  flex: 1;
+  min-width: 0;
+}
+
+.welcome-heading {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 10px;
+}
+
+.welcome-desc {
+  font-size: 14px;
+  color: var(--text-secondary);
+  line-height: 1.7;
+  margin-bottom: 8px;
+}
+.welcome-desc:last-of-type { margin-bottom: 14px; }
+
+.welcome-link {
+  color: var(--blue);
+  font-weight: 500;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+.welcome-link:hover { color: var(--blue-hover); }
+
+/* ── Tag pills ── */
+.welcome-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+  margin-top: 4px;
+}
+
+.w-tag {
+  display: inline-block;
+  font-size: 11.5px;
+  font-weight: 600;
+  color: var(--blue);
+  background: var(--blue-light);
+  padding: 3px 10px;
+  border-radius: 12px;
+  letter-spacing: 0.1px;
+}
+
+/* ── Right: campus image ── */
+.welcome-img-block {
+  flex-shrink: 0;
+  width: 280px;
+}
+
+.campus-img {
+  width: 100%;
+  height: 170px;
+  object-fit: cover;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+  border: 1px solid var(--border);
+  transition: box-shadow var(--t-fast);
+}
+.campus-img:hover {
+  box-shadow: var(--shadow-lg);
+}
+
+/* Fallback: if no image, show placeholder */
+.welcome-img-block:not(:has(img[src])) .campus-img {
+  display: none;
+}

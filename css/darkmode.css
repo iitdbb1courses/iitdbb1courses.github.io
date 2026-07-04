@@ -1,0 +1,162 @@
+/* ============================================================
+   darkmode.css  —  Dark Theme Overrides
+   Applied when <html data-theme="dark">
+   ============================================================ */
+
+[data-theme="dark"] {
+  /* ── Re-define tokens for dark mode ── */
+  --text:          #F9FAFB;
+  --text-secondary:#D1D5DB;
+  --text-muted:    #9CA3AF;
+  --text-faint:    #6B7280;
+
+  --bg:            #0F1117;
+  --surface:       #1C1D26;
+  --surface-alt:   #23242F;
+  --border:        #2D2F3E;
+  --border-dark:   #3A3C50;
+
+  --blue:          #4D8DEA;
+  --blue-hover:    #6BA3F0;
+  --blue-light:    rgba(77,141,234,0.15);
+  --blue-dim:      rgba(77,141,234,0.10);
+
+  --shadow-sm:     0 1px 2px rgba(0,0,0,0.4);
+  --shadow:        0 1px 3px rgba(0,0,0,0.4), 0 1px 2px rgba(0,0,0,0.3);
+  --shadow-md:     0 4px 6px rgba(0,0,0,0.4), 0 2px 4px rgba(0,0,0,0.3);
+  --shadow-lg:     0 10px 15px rgba(0,0,0,0.5), 0 4px 6px rgba(0,0,0,0.4);
+}
+
+/* ── Dark: Header ── */
+[data-theme="dark"] .site-header {
+  background: var(--surface);
+  border-bottom-color: var(--border);
+  box-shadow: 0 1px 8px rgba(0,0,0,0.5);
+}
+
+[data-theme="dark"] .dark-mode-btn {
+  background: var(--surface-alt);
+  border-color: var(--border);
+  color: var(--text-muted);
+}
+[data-theme="dark"] .dark-mode-btn:hover {
+  background: var(--blue-dim);
+  border-color: var(--blue);
+  color: var(--blue);
+}
+
+/* ── Dark: Welcome ── */
+[data-theme="dark"] .welcome-card {
+  background: var(--surface);
+  border-color: var(--border);
+}
+
+[data-theme="dark"] .campus-img {
+  border-color: var(--border);
+  opacity: 0.88;
+}
+
+[data-theme="dark"] .w-tag {
+  background: var(--blue-dim);
+  color: var(--blue);
+}
+
+/* ── Dark: Toggle section ── */
+[data-theme="dark"] .toggle-group {
+  background: var(--surface);
+  border-color: var(--border);
+}
+
+[data-theme="dark"] .toggle-track {
+  background: var(--border-dark);
+}
+
+[data-theme="dark"] .toggle-switch input:checked + .toggle-track {
+  background: var(--blue);
+}
+
+/* ── Dark: Dashboard ── */
+[data-theme="dark"] .dashboard-card {
+  background: var(--surface);
+  border-color: var(--border);
+}
+
+[data-theme="dark"] .sidebar {
+  border-right-color: var(--border);
+}
+
+/* ── Dark: Table ── */
+[data-theme="dark"] .table-wrap {
+  border-color: var(--border);
+}
+
+[data-theme="dark"] .course-table thead tr {
+  background: var(--surface-alt);
+  border-bottom-color: var(--border);
+}
+
+[data-theme="dark"] .course-table th {
+  color: var(--text);
+}
+
+[data-theme="dark"] .course-table tbody tr {
+  border-bottom-color: var(--border);
+}
+
+[data-theme="dark"] .course-table tbody tr:hover {
+  background: var(--blue-dim);
+}
+
+[data-theme="dark"] .td-code .code-chip {
+  background: var(--blue-dim);
+  color: var(--blue);
+}
+
+[data-theme="dark"] .td-credits .credit-num {
+  color: var(--blue);
+}
+
+/* ── Dark: Footer ── */
+[data-theme="dark"] .site-footer {
+  background: var(--surface);
+  border-top-color: var(--border);
+}
+
+/* ── Dark: Detail Panel ── */
+[data-theme="dark"] .detail-panel {
+  background: var(--surface-alt);
+}
+
+[data-theme="dark"] .dc-edit-note code {
+  background: var(--bg);
+  color: var(--text-muted);
+}
+
+[data-theme="dark"] .dc-chip {
+  background: var(--blue-dim);
+  color: var(--blue);
+}
+
+[data-theme="dark"] .content-split {
+  border-top-color: var(--border);
+}
+
+[data-theme="dark"] .table-section {
+  border-right-color: var(--border);
+}
+
+[data-theme="dark"] .dc-header {
+  border-bottom-color: var(--border);
+}
+
+[data-theme="dark"] .dc-edit-note {
+  border-top-color: var(--border);
+}
+
+[data-theme="dark"] .course-table tbody tr.selected {
+  background: var(--blue-dim) !important;
+}
+
+[data-theme="dark"] .course-table tbody tr.selected .course-name {
+  color: var(--blue);
+}

@@ -1,0 +1,86 @@
+/* ============================================================
+   animation.css  —  Keyframes & Transition Helpers
+   ============================================================ */
+
+/* ── Fade in ── */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+/* ── Slide up + fade in ── */
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(12px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ── Slide down + fade in ── */
+@keyframes slideDown {
+  from { opacity: 0; transform: translateY(-8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ── Row stagger: slide in from left ── */
+@keyframes rowSlideIn {
+  from { opacity: 0; transform: translateX(-8px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+/* ── Panel swap: panel fades out ── */
+@keyframes panelOut {
+  from { opacity: 1; transform: translateY(0); }
+  to   { opacity: 0; transform: translateY(-6px); }
+}
+
+/* ── Panel swap: panel fades in ── */
+@keyframes panelIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ── Credit value pop ── */
+@keyframes creditPop {
+  0%   { transform: scale(1); }
+  50%  { transform: scale(1.12); }
+  100% { transform: scale(1); }
+}
+
+
+/* ════════════════════════════════════════
+   Utility classes (applied via JS)
+════════════════════════════════════════ */
+
+/* Applied to main-content during panel switch */
+.panel-animating-out {
+  animation: panelOut 180ms ease forwards;
+  pointer-events: none;
+}
+
+.panel-animating-in {
+  animation: panelIn 200ms ease forwards;
+}
+
+/* Applied to each table row on render */
+.course-table tbody tr {
+  animation: rowSlideIn 220ms ease both;
+}
+
+/* Credit value pops when it changes */
+.credit-pop {
+  animation: creditPop 300ms ease;
+}
+
+/* Welcome card entrance */
+.welcome-card {
+  animation: slideDown 350ms ease both;
+}
+
+/* Dashboard card entrance */
+.dashboard-card {
+  animation: slideUp 400ms ease 100ms both;
+}
+
+/* Toggle group entrance */
+.toggle-group {
+  animation: fadeIn 300ms ease both;
+}

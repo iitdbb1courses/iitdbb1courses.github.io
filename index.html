@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="IIT Delhi B.Tech Biochemical Engineering & Biotechnology — Semester-wise Course Repository with Before 2025 and After 2025 curricula." />
+  <title>IIT Delhi | B.Tech BEB — Course Repository</title>
+
+  <!-- Google Fonts: Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <!-- ── Stylesheets (ordered: base → components → utilities) ── -->
+  <link rel="stylesheet" href="css/base.css" />
+  <link rel="stylesheet" href="css/header.css" />
+  <link rel="stylesheet" href="css/welcome.css" />
+  <link rel="stylesheet" href="css/curriculum-toggle.css" />
+  <link rel="stylesheet" href="css/dashboard.css" />
+  <link rel="stylesheet" href="css/sidebar.css" />
+  <link rel="stylesheet" href="css/table.css" />
+  <link rel="stylesheet" href="css/footer.css" />
+  <link rel="stylesheet" href="css/darkmode.css" />
+  <link rel="stylesheet" href="css/responsive.css" />
+  <link rel="stylesheet" href="css/animation.css" />
+</head>
+
+<body>
+
+  <!-- ══════════════════════════════════════════════════
+       HEADER
+  ══════════════════════════════════════════════════ -->
+  <header class="site-header" role="banner">
+    <div class="header-inner">
+
+      <!-- Brand: Logo + Titles -->
+      <div class="header-brand">
+        <div class="logo-wrap" aria-label="IIT Delhi">
+          <img src="Images/iitd-logo.png"
+               alt="IIT Delhi Logo"
+               class="iitd-logo"
+               width="52" height="52" />
+        </div>
+
+        <div class="header-titles">
+          <h1 class="header-main-title">B.Tech in Biochemical Engineering &amp; Biotechnology</h1>
+          <p class="header-sub-title">IIT Delhi Course Repository</p>
+        </div>
+      </div><!-- /.header-brand -->
+
+      <!-- Controls -->
+      <div class="header-controls">
+        <button id="darkModeBtn" class="dark-mode-btn" aria-label="Toggle dark mode">
+          <span id="themeIcon" aria-hidden="true">🌙</span>
+          <span id="themeText">Dark Mode</span>
+        </button>
+        <!-- Mobile hamburger -->
+        <button id="hamburgerBtn" class="hamburger-btn" aria-label="Open menu"
+                aria-expanded="false" aria-controls="sidebar">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </button>
+      </div>
+
+    </div><!-- /.header-inner -->
+  </header>
+
+
+  <!-- ══════════════════════════════════════════════════
+       WELCOME SECTION
+  ══════════════════════════════════════════════════ -->
+  <section class="welcome-section" aria-label="Welcome">
+    <div class="welcome-card">
+      <div class="welcome-body">
+
+        <div class="welcome-text-block">
+          <h2 class="welcome-heading">&#128075; Welcome</h2>
+          <p class="welcome-desc">
+            This website contains semester-wise course information for the B.Tech programme in
+            <a href="https://web.iitd.ac.in/~beb/" target="_blank" rel="noopener"
+               class="welcome-link">Biochemical Engineering &amp; Biotechnology</a>, IIT Delhi.
+          </p>
+          <p class="welcome-desc">
+            Select any semester from the left panel to view complete course details, credits,
+            slots and curriculum structure.
+          </p>
+          <div class="welcome-tags">
+            <span class="w-tag">B.Tech (4 Years)</span>
+            <span class="w-tag">Semesters III – VIII</span>
+            <span class="w-tag">158 Credits</span>
+          </div>
+        </div>
+
+        <div class="welcome-img-block">
+          <img src="Images/campus.png" alt="IIT Delhi Main Campus"
+               class="campus-img" loading="lazy" />
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ══════════════════════════════════════════════════
+       CURRICULUM TOGGLE BAR
+  ══════════════════════════════════════════════════ -->
+  <div class="curr-toggle-section" role="region" aria-label="Curriculum selector">
+    <div class="curr-toggle-inner">
+      <div class="toggle-group">
+        <span class="toggle-label-text" aria-hidden="true">Curriculum</span>
+        <label class="toggle-switch" for="currToggle" aria-label="Switch curriculum">
+          <input type="checkbox" id="currToggle" role="switch"
+                 aria-checked="true" checked />
+          <span class="toggle-track" aria-hidden="true">
+            <span class="toggle-thumb"></span>
+          </span>
+        </label>
+        <span class="toggle-curr-label" id="currLabel" aria-live="polite">After 2025</span>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- ══════════════════════════════════════════════════
+       DASHBOARD  (Sidebar + Main Content)
+  ══════════════════════════════════════════════════ -->
+  <div class="dashboard-section">
+    <div class="dashboard-card">
+      <div class="dashboard-inner">
+
+        <!-- LEFT: Semester Sidebar -->
+        <aside id="sidebar" class="sidebar" role="navigation" aria-label="Semester navigation">
+          <ul id="semList" class="sem-list" role="list">
+            <!-- Populated by script.js -->
+          </ul>
+          <!-- Mobile overlay close area -->
+          <div id="sidebarOverlay" class="sidebar-overlay" aria-hidden="true"></div>
+        </aside>
+
+        <!-- RIGHT: Course Panel -->
+        <main id="mainContent" class="main-content" role="main">
+
+          <!-- Panel Header -->
+          <div class="panel-header" id="panelHeader">
+            <div class="panel-header-left">
+              <h2 class="panel-title" id="panelTitle">Semester III</h2>
+              <p class="panel-subtitle" id="panelSubtitle"></p>
+            </div>
+            <div class="panel-header-right">
+              <div class="credit-display" aria-label="Total credits">
+                <span class="credit-label">Total Credits</span>
+                <span class="credit-value" id="creditValue">—</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Split: Table (left) + Detail panel (right) -->
+          <div class="content-split">
+
+            <!-- LEFT: Compact course table -->
+            <div class="table-section">
+              <div class="table-wrap" id="tableWrap">
+                <table class="course-table" id="courseTable">
+                  <thead>
+                    <tr>
+                      <th scope="col" class="th-code">Course Code</th>
+                      <th scope="col" class="th-name">Course Name</th>
+                      <th scope="col" class="th-credits">Credits</th>
+                      <th scope="col" class="th-slot">Slot</th>
+                    </tr>
+                  </thead>
+                  <tbody id="courseBody">
+                    <!-- Populated by script.js -->
+                  </tbody>
+                </table>
+              </div>
+            </div><!-- /table-section -->
+
+            <!-- RIGHT: Course detail panel -->
+            <div class="detail-panel" id="detailPanel">
+              <div class="detail-placeholder">
+                <span class="detail-ph-icon">☝️</span>
+                <p class="detail-ph-text">Click any course row to view its details</p>
+              </div>
+            </div><!-- /detail-panel -->
+
+          </div><!-- /content-split -->
+
+        </main><!-- /main-content -->
+
+      </div><!-- /dashboard-inner -->
+    </div><!-- /dashboard-card -->
+  </div><!-- /dashboard-section -->
+
+
+  <!-- ══════════════════════════════════════════════════
+       FOOTER
+  ══════════════════════════════════════════════════ -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="footer-inner">
+      <p class="footer-text">
+        &copy; 2025 &nbsp;·&nbsp;
+        IIT Delhi &nbsp;·&nbsp;
+        B.Tech Biochemical Engineering &amp; Biotechnology &nbsp;·&nbsp;
+        Course Repository
+      </p>
+      <p class="footer-note">
+        Credits = L + T + P &times; 0.5 &nbsp;&nbsp;|&nbsp;&nbsp;
+        L = Lectures &nbsp; T = Tutorials &nbsp; P = Practicals
+      </p>
+    </div>
+  </footer>
+
+
+  <!-- ── Scripts (load order matters: courseContent → courses → theme → script) ── -->
+  <script src="js/courseContent.js"></script>
+  <script src="js/courses.js"></script>
+  <script src="js/theme.js"></script>
+  <script src="js/script.js"></script>
+
+</body>
+</html>
