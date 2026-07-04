@@ -5,11 +5,10 @@
 /* ── Outer section ── */
 .dashboard-section {
   padding: 0 var(--page-pad) var(--page-pad);
-  max-width: 1400px;
+  max-width: 1700px; /* Widened for monitor screens */
   margin: 0 auto;
 }
 
-/* ── White card wrapping sidebar + main ── */
 .dashboard-card {
   background: var(--surface);
   border: 1px solid var(--border);
@@ -17,12 +16,15 @@
   box-shadow: var(--shadow);
   overflow: hidden;
   transition: background var(--t-med), border-color var(--t-med);
+  /* Make dashboard fill remaining viewport height */
+  height: calc(100vh - 280px);
+  min-height: 450px;
 }
 
 /* ── Inner flex row ── */
 .dashboard-inner {
   display: flex;
-  min-height: 500px;
+  height: 100%; /* Fill the dashboard-card */
 }
 
 /* ══════════════════════════════════════════════
